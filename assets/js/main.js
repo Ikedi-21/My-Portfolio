@@ -273,6 +273,170 @@
   }
 
   /* ==========================================================
+     8. FORMSPREE CONTACT FORM HANDLER
+     Handles client-side validation, Formspree submission, loading,
+     success, and error states gracefully.
+     ========================================================== */
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const statusSuccess = document.getElementById('form-status-success');
+    const statusError = document.getElementById('form-status-error');
+    const statusErrorMessage = document.getElementById('form-status-error-message');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+    const defaultBtnText = submitBtnText ? submitBtnText.textContent : 'Send message';
+
+    function clearStatus() {
+      if (statusSuccess) statusSuccess.classList.remove('is-visible');
+      if (statusError) statusError.classList.remove('is-visible');
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Clear inline error on input
+    ['contact-name', 'contact-email', 'contact-subject', 'contact-message'].forEach(function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        el.classList.remove('is-invalid');
+        const err = document.getElementById('error-' + id.replace('contact-', ''));
+        if (err) err.classList.remove('is-visible');
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearStatus();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const subjectInput = document.getElementById('contact-subject');
+      const messageInput = document.getElementById('contact-message');
+
+      let isValid = true;
+
+      // Validate name
+      if (!nameInput || !nameInput.value.trim()) {
+        if (nameInput) nameInput.classList.add('is-invalid');
+        const err = document.getElementById('error-name');
+        if (err) err.classList.add('is-visible');
+        isValid = false;
+      } else {
+        nameInput.classList.remove('is-invalid');
+        const err = document.getElementById('error-name');
+        if (err) err.classList.remove('is-visible');
+      }
+
+      // Validate email
+      if (!emailInput || !validateEmail(emailInput.value.trim())) {
+        if (emailInput) emailInput.classList.add('is-invalid');
+        const err = document.getElementById('error-email');
+        if (err) err.classList.add('is-visible');
+        isValid = false;
+      } else {
+        emailInput.classList.remove('is-invalid');
+        const err = document.getElementById('error-email');
+        if (err) err.classList.remove('is-visible');
+      }
+
+      // Validate subject
+      if (!subjectInput || !subjectInput.value.trim()) {
+        if (subjectInput) subjectInput.classList.add('is-invalid');
+        const err = document.getElementById('error-subject');
+        if (err) err.classList.add('is-visible');
+        isValid = false;
+      } else {
+        subjectInput.classList.remove('is-invalid');
+        const err = document.getElementById('error-subject');
+        if (err) err.classList.remove('is-visible');
+      }
+
+      // Validate message
+      if (!messageInput || !messageInput.value.trim()) {
+        if (messageInput) messageInput.classList.add('is-invalid');
+        const err = document.getElementById('error-message');
+        if (err) err.classList.add('is-visible');
+        isValid = false;
+      } else {
+        messageInput.classList.remove('is-invalid');
+        const err = document.getElementById('error-message');
+        if (err) err.classList.remove('is-visible');
+      }
+
+      if (!isValid) {
+        return;
+      }
+
+      // Check if endpoint is placeholder
+      const formAction = form.getAttribute('action') || '';
+      if (!formAction || formAction.includes('YOUR_FORM_ID')) {
+        if (statusError) {
+          if (statusErrorMessage) {
+            statusErrorMessage.textContent = 'Please configure your Formspree endpoint (Form ID) in contact.html before submitting.';
+          }
+          statusError.classList.add('is-visible');
+          statusError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        return;
+      }
+
+      // Enter loading state & prevent duplicate submission
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        if (submitBtnText) submitBtnText.textContent = 'Sending message...';
+      }
+
+      const formData = new FormData(form);
+
+      fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.reset();
+            if (statusSuccess) {
+              statusSuccess.classList.add('is-visible');
+              statusSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          } else {
+            return response.json().then(function (data) {
+              const errMsg =
+                data && data.errors
+                  ? data.errors.map(function (item) { return item.message; }).join(', ')
+                  : (data && data.error ? data.error : 'There was an issue submitting the form. Please try again or reach out directly.');
+              throw new Error(errMsg);
+            });
+          }
+        })
+        .catch(function (error) {
+          if (statusError) {
+            if (statusErrorMessage) {
+              statusErrorMessage.textContent = error.message || 'There was an error sending your message. Please email ikedinachiogbonne@gmail.com directly.';
+            }
+            statusError.classList.add('is-visible');
+            statusError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute('aria-busy');
+            if (submitBtnText) submitBtnText.textContent = defaultBtnText;
+          }
+        });
+    });
+  }
+
+  /* ==========================================================
      DOM INITIALISATION
      ========================================================== */
   document.addEventListener('DOMContentLoaded', function () {
@@ -283,5 +447,6 @@
     initLocalUrlFallback();
     initLazyImages();
     initScrollReveal();
+    initContactForm();
   });
 })();
