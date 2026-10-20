@@ -1,4 +1,4 @@
-# robots.txt — Ogbonne Ikedinachi portfolio
+# robots.txt: Ogbonne Ikedinachi portfolio
 User-agent: *
 Allow: /
 Sitemap: https://ikedinachi.dev/sitemap.xml

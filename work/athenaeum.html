@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Athenaeum-Ikedi — Case Study | Ogbonne Ikedinachi</title>
+  <title>Athenaeum-Ikedi | Case Study | Ogbonne Ikedinachi</title>
   <meta name="description" content="Case study for Athenaeum-Ikedi, an academic library management system built with Python, Django 6.1, and PostgreSQL deployed on Railway." />
   <link rel="canonical" href="https://ikedinachi.dev/work/athenaeum" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Athenaeum-Ikedi — Case Study | Ogbonne Ikedinachi" />
+  <meta property="og:title" content="Athenaeum-Ikedi | Case Study | Ogbonne Ikedinachi" />
   <meta property="og:description" content="Case study for Athenaeum-Ikedi, an academic library management system built with Python and Django 6.1." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://ikedinachi.dev/work/athenaeum" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Athenaeum-Ikedi — Case Study | Ogbonne Ikedinachi" />
+  <meta name="twitter:title" content="Athenaeum-Ikedi | Case Study | Ogbonne Ikedinachi" />
   <meta name="twitter:description" content="Case study for Athenaeum-Ikedi, an academic library management system built with Python and Django 6.1." />
 
   <!-- Favicons -->
@@ -50,7 +50,7 @@
   <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi — Home">
+      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi, Home">
         <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
           <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
           <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
@@ -97,7 +97,7 @@
         </svg>
         <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
       </span>
-      <button type="button" class="mobile-nav__close" id="mobile-menu-close" aria-label="Close menu">
+      <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
@@ -137,36 +137,36 @@
       <!-- Overview -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Overview</h2>
-        <p class="case-section__text">Athenaeum-Ikedi is an enterprise-grade academic library management platform engineered for institutional book circulation, patron verification, active inventory holds, penalty fine calculations, and detailed audit logging.</p>
+        <p class="case-section__text">Athenaeum-Ikedi is an academic library management application designed for cataloguing books, managing patron borrowing, handling active reservation queues, computing overdue fines, and recording audit logs.</p>
       </section>
 
       <!-- My Role -->
       <section class="case-section reveal">
         <h2 class="case-section__title">My role</h2>
-        <p class="case-section__text">Lead backend architect and developer &mdash; responsible for data modelling, transaction design, concurrency safeguards, security headers, and deployment on Railway.</p>
+        <p class="case-section__text">Lead backend developer. Designed the data models, transactional workflows, concurrency locks, security policies, and Railway deployment.</p>
       </section>
 
       <!-- The Problem -->
       <section class="case-section reveal">
         <h2 class="case-section__title">The problem</h2>
-        <p class="case-section__text">Academic libraries encounter complex concurrent borrowing states. If multiple students request the final available copy of a physical course textbook simultaneously, uncoordinated read-check-write operations produce double-lends and corrupted inventory numbers. The system required absolute transaction integrity alongside strict compliance auditing.</p>
+        <p class="case-section__text">In college libraries, multiple students frequently request the final available copy of a course textbook at the same time. Unchecked read-and-write cycles create inventory mismatches and double-lends. The system required guaranteed transaction safety along with verifiable audit trails.</p>
       </section>
 
       <!-- Key Decisions -->
       <section class="case-section reveal">
-        <h2 class="case-section__title">Key decisions &amp; rationale</h2>
+        <h2 class="case-section__title">Key decisions and rationale</h2>
         <div class="decision-list">
           <div class="decision-item">
-            <h3 class="decision-item__title">Pure policy rules separated from orchestration services</h3>
-            <p class="decision-item__desc">Isolated all business rules (loan eligibility, maximum concurrent checkouts, and overdue fine formulas) into pure, side-effect-free Python functions. This architecture guarantees business logic can be unit-tested without database mocks or framework dependencies.</p>
+            <h3 class="decision-item__title">Separating business rules from data services</h3>
+            <p class="decision-item__desc">Placed borrowing rules, hold limits, and fine formulas into pure Python functions. This structure keeps core rules straightforward to unit test without spinning up database test fixtures.</p>
           </div>
           <div class="decision-item">
             <h3 class="decision-item__title">Atomic transactions with row-level locks</h3>
-            <p class="decision-item__desc">Wrapped checkout and hold-reservation routines in <code>transaction.atomic()</code> accompanied by <code>select_for_update()</code> database locks. This prevents concurrency race conditions when several patrons or librarians access the same volume simultaneously.</p>
+            <p class="decision-item__desc">Wrapped checkout and reservation actions in <code>transaction.atomic()</code> blocks using <code>select_for_update()</code>. This stops race conditions whenever multiple users try to reserve or borrow the same copy at once.</p>
           </div>
           <div class="decision-item">
-            <h3 class="decision-item__title">Immutable transaction audit log</h3>
-            <p class="decision-item__desc">Engineered an append-only transaction ledger that records every check-out, return, fine deduction, and hold modification with operator attribution and UTC timestamps, providing non-repudiable audit compliance.</p>
+            <h3 class="decision-item__title">Immutable audit logs</h3>
+            <p class="decision-item__desc">Created an append-only transaction ledger that logs checkouts, returns, fine payments, and hold changes with timestamps and user IDs for clear traceability.</p>
           </div>
         </div>
       </section>
@@ -174,7 +174,7 @@
       <!-- Architecture -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Architecture</h2>
-        <p class="case-section__text">Built using Python with Django 6.1 on PostgreSQL. Security architecture includes strict Content Security Policy (CSP) headers, CSRF token validation, session-bound permissions, and deployment containerization hosted on Railway.</p>
+        <p class="case-section__text">Built with Python and Django 6.1 on PostgreSQL. The security setup includes strict Content Security Policy (CSP) headers, CSRF verification, session protection, and Docker containerization hosted on Railway.</p>
       </section>
 
       <!-- Stack -->

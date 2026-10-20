@@ -1,5 +1,5 @@
 /* ============================================================
-   OGBONNE IKEDINACHI — PORTFOLIO STYLES
+   OGBONNE IKEDINACHI | PORTFOLIO STYLES
    Single shared stylesheet for all pages.
    ============================================================ */
 
@@ -1139,7 +1139,7 @@ noscript .site-loader {
 }
 
 .process-card__list li::before {
-  content: "—";
+  content: "•";
   color: var(--accent);
 }
 

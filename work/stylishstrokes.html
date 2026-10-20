@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StylishStrokes — Case Study | Ogbonne Ikedinachi</title>
+  <title>StylishStrokes | Case Study | Ogbonne Ikedinachi</title>
   <meta name="description" content="Case study for StylishStrokes, a calligraphy archive with an interactive stroke engine and live tracing tool. Built with React, Vite, and Tailwind CSS." />
   <link rel="canonical" href="https://ikedinachi.dev/work/stylishstrokes" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="StylishStrokes — Case Study | Ogbonne Ikedinachi" />
+  <meta property="og:title" content="StylishStrokes | Case Study | Ogbonne Ikedinachi" />
   <meta property="og:description" content="Case study for StylishStrokes, a calligraphy archive with an interactive stroke engine." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://ikedinachi.dev/work/stylishstrokes" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="StylishStrokes — Case Study | Ogbonne Ikedinachi" />
+  <meta name="twitter:title" content="StylishStrokes | Case Study | Ogbonne Ikedinachi" />
   <meta name="twitter:description" content="Case study for StylishStrokes, a calligraphy archive with an interactive stroke engine." />
 
   <!-- Favicons -->
@@ -50,7 +50,7 @@
   <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi — Home">
+      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi, Home">
         <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
           <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
           <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
@@ -97,7 +97,7 @@
         </svg>
         <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
       </span>
-      <button type="button" class="mobile-nav__close" id="mobile-menu-close" aria-label="Close menu">
+      <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
@@ -136,36 +136,36 @@
       <!-- Overview -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Overview</h2>
-        <p class="case-section__text">StylishStrokes is a specialized digital calligraphy exploration platform. It provides learners and enthusiasts with an interactive "Ink Lab" canvas stroke engine, nib angle and line-width adjustments, and an assisted live tracing feature that guides hand cadence and fluid penmanship.</p>
+        <p class="case-section__text">StylishStrokes is a digital calligraphy practice platform. It includes an interactive "Ink Lab" canvas where users can adjust nib angles, control ink flow, and practice lettering using a guided live tracing tool.</p>
       </section>
 
       <!-- My Role & Team Credit -->
       <section class="case-section reveal">
-        <h2 class="case-section__title">My role &amp; team credit</h2>
-        <p class="case-section__text">StylishStrokes was created as a collaborative five-person team project. I served as the <strong>Lead UI Designer</strong> &mdash; spearheading the aesthetic direction, layout hierarchy, dark typographic theme, and the interface controls for stroke parameters, while working closely with team engineers on canvas integration.</p>
+        <h2 class="case-section__title">My role and team credit</h2>
+        <p class="case-section__text">StylishStrokes was a collaborative project built by a team of five. I served as the <strong>Lead UI Designer</strong>. I designed the dark editorial interface, color palettes, and stroke adjustment controls, working closely with our frontend engineers to connect the controls to the HTML5 canvas engine.</p>
       </section>
 
       <!-- The Problem -->
       <section class="case-section reveal">
         <h2 class="case-section__title">The problem</h2>
-        <p class="case-section__text">Calligraphy is traditionally tactile, making digital education difficult. Standard drawing tools feel synthetic because they lack pressure simulation, nib rotation angles, and rhythm guides. The project goal was to build a browser-accessible environment that preserves the fluid elegance of physical ink and provides real-time letterform tracing.</p>
+        <p class="case-section__text">Calligraphy is a tactile craft, making it hard to recreate in a web browser. Most online drawing tools feel generic because they lack nib angles, pressure variation, and stroke guides. Our goal was to build a clean web tool where users can practice letterforms with real-time feedback.</p>
       </section>
 
       <!-- Key Decisions -->
       <section class="case-section reveal">
-        <h2 class="case-section__title">Key decisions &amp; rationale</h2>
+        <h2 class="case-section__title">Key decisions and rationale</h2>
         <div class="decision-list">
           <div class="decision-item">
-            <h3 class="decision-item__title">Editorial dark aesthetic for ink contrast</h3>
-            <p class="decision-item__desc">Designed a rich, deep black and charcoal palette with gold and vibrant green accent inks. High visual contrast spotlighted the subtle stroke variations, opacity bleeds, and ink texture.</p>
+            <h3 class="decision-item__title">Dark theme focused on ink contrast</h3>
+            <p class="decision-item__desc">Designed a dark charcoal layout paired with gold and green ink colors. The high contrast makes stroke edges, angle variations, and line thickness easy to see as you write.</p>
           </div>
           <div class="decision-item">
-            <h3 class="decision-item__title">HTML5 Canvas stroke engine with velocity interpolation</h3>
-            <p class="decision-item__desc">Integrated dynamic canvas drawing listeners with stroke velocity calculations to replicate varying nib thickness without performance stutter.</p>
+            <h3 class="decision-item__title">HTML5 Canvas engine with velocity tracking</h3>
+            <p class="decision-item__desc">Connected mouse and touch movement to velocity calculations in the canvas. This mimics the thinning and thickening of real fountain pen strokes without lagging on modern browsers.</p>
           </div>
           <div class="decision-item">
-            <h3 class="decision-item__title">Vector overlay guide for guided tracing</h3>
-            <p class="decision-item__desc">Constructed scalable SVG letterform paths behind the interactive canvas, enabling users to trace practice words such as 'Flow' with precise path bounds and immediate stroke feedback.</p>
+            <h3 class="decision-item__title">Vector overlays for guided tracing</h3>
+            <p class="decision-item__desc">Placed SVG letterform paths behind the drawing canvas so users can trace practice words such as 'Flow', giving beginners immediate visual guidance on letter proportion.</p>
           </div>
         </div>
       </section>
@@ -173,7 +173,7 @@
       <!-- Architecture -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Architecture</h2>
-        <p class="case-section__text">Single-page React application bundled with Vite. Styling constructed using Tailwind CSS utilities with specialized canvas context hooks for real-time brush rendering, colour sampling, and tracing path coordinate mapping.</p>
+        <p class="case-section__text">Single-page React application bundled with Vite. Component styling is handled with Tailwind CSS utilities, with custom React hooks managing the canvas drawing loop, color selection, and letter tracing guides.</p>
       </section>
 
       <!-- Stack -->

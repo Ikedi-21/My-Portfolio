@@ -1,5 +1,5 @@
 /**
- * OGBONNE IKEDINACHI — PORTFOLIO JAVASCRIPT
+ * OGBONNE IKEDINACHI | PORTFOLIO JAVASCRIPT
  * Single shared script for all pages.
  */
 
