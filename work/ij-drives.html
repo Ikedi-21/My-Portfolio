@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IJ-Drives — Case Study | Ogbonne Ikedinachi</title>
+  <meta name="description" content="Case study for IJ-Drives, a multi-modal Nigerian transport marketplace covering land, sea, air and rail travel. Built with vanilla JavaScript, HTML/CSS, Google Maps, and IndexedDB." />
+  <link rel="canonical" href="https://ikedinachi.dev/work/ij-drives" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IJ-Drives — Case Study | Ogbonne Ikedinachi" />
+  <meta property="og:description" content="Case study for IJ-Drives, a multi-modal Nigerian transport marketplace." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ikedinachi.dev/work/ij-drives" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IJ-Drives — Case Study | Ogbonne Ikedinachi" />
+  <meta name="twitter:description" content="Case study for IJ-Drives, a multi-modal Nigerian transport marketplace." />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+
+  <!-- Google Fonts: Newsreader & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" />
+
+  <!-- Single shared stylesheet -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <!-- Navigation progress bar -->
+  <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+
+  <!-- First-visit session loader -->
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <svg class="site-loader__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ogbonne Ikedinachi monogram">
+      <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+      <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+    </svg>
+    <span class="site-loader__name">Ogbonne Ikedinachi</span>
+  </div>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi — Home">
+        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+        </svg>
+        <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-nav__links">
+          <a href="/" class="site-nav__link">Home</a>
+          <a href="/work" class="site-nav__link" aria-current="page">Work</a>
+          <a href="/stack" class="site-nav__link">Stack</a>
+          <a href="/how-i-work" class="site-nav__link">How I work</a>
+          <a href="/about" class="site-nav__link">About</a>
+          <a href="/contact" class="site-nav__link">Contact</a>
+        </div>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary btn--small" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="mobile-nav__header">
+      <span class="site-logo">
+        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+        </svg>
+        <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
+      </span>
+      <button type="button" class="mobile-nav__close" id="mobile-menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__items">
+      <a href="/" class="mobile-nav__link">Home</a>
+      <a href="/work" class="mobile-nav__link" aria-current="page">Work</a>
+      <a href="/stack" class="mobile-nav__link">Stack</a>
+      <a href="/how-i-work" class="mobile-nav__link">How I work</a>
+      <a href="/about" class="mobile-nav__link">About</a>
+      <a href="/contact" class="mobile-nav__link">Contact</a>
+      <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary" style="margin-top: var(--space-md);" target="_blank" rel="noopener noreferrer">Download CV</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <article class="container container--narrow">
+      <!-- Case Study Hero -->
+      <header class="case-hero">
+        <a href="/work" class="case-hero__back">&larr; Back to all work</a>
+        <h1 class="page-header__title">IJ-Drives</h1>
+        <p class="page-header__intro">Multi-modal Nigerian transport marketplace covering land, sea, air and rail.</p>
+        <div class="case-hero__meta">
+          <span class="badge badge--unpublished">Unpublished</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Google Maps</span>
+          <span class="tag">IndexedDB</span>
+        </div>
+        <div class="case-hero__actions">
+          <a href="https://github.com/Ikedi-21/IJ-Drives" class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer">GitHub repository &rarr;</a>
+        </div>
+      </header>
+
+      <!-- Overview -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">Overview</h2>
+        <p class="case-section__text">IJ-Drives is a multi-modal Nigerian transport marketplace concept designed to consolidate domestic travel options across interstate road transit, ferry waterways, domestic aviation, and railway routes into an intuitive interface.</p>
+      </section>
+
+      <!-- My Role -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">My role</h2>
+        <p class="case-section__text">Solo frontend architect &mdash; designed the user flows, dual-theme layout engine, travel mode switching logic, interactive route search forms, and offline client persistence.</p>
+      </section>
+
+      <!-- The Problem -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">The problem</h2>
+        <p class="case-section__text">Nigerian travellers frequently navigate between multiple disjointed websites or physical transport terminals to compare route viability, departure timings, and ticket pricing between road buses, rail coaches, flights, and ferries. IJ-Drives creates a single aggregator interface allowing travellers to compare multi-modal transit options on common routes such as Lagos to Ibadan or Abuja to Kaduna.</p>
+      </section>
+
+      <!-- Key Decisions -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">Key decisions &amp; rationale</h2>
+        <div class="decision-list">
+          <div class="decision-item">
+            <h3 class="decision-item__title">Vanilla JavaScript zero-dependency architecture</h3>
+            <p class="decision-item__desc">Built the client interface entirely using vanilla JavaScript and semantic HTML/CSS without bulky frameworks. This guaranteed instant initial paint times on bandwidth-constrained mobile 3G/4G networks common in transit environments.</p>
+          </div>
+          <div class="decision-item">
+            <h3 class="decision-item__title">Client-side IndexedDB caching</h3>
+            <p class="decision-item__desc">Used IndexedDB to persist recent searches, preferred travel classes, and route schedules locally on the client. Passengers can check their booked schedules and terminal guidelines even when cellular connectivity drops during transit.</p>
+          </div>
+          <div class="decision-item">
+            <h3 class="decision-item__title">First-class dark and light mode UI</h3>
+            <p class="decision-item__desc">Engineered dedicated light and dark themes using CSS variables with automatic system preference detection, optimising outdoor daylight visibility and night-time battery preservation on mobile OLED displays.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">Architecture</h2>
+        <p class="case-section__text">Modular vanilla JavaScript components paired with CSS custom properties. Google Maps JavaScript API handles geographic waypoint selection, route distance calculations, and terminal locations, backed by browser IndexedDB storage for offline search caching.</p>
+      </section>
+
+      <!-- Stack -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">Technologies used</h2>
+        <div class="project-card__tags">
+          <span class="tag">Vanilla JavaScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3 Custom Properties</span>
+          <span class="tag">Google Maps API</span>
+          <span class="tag">IndexedDB</span>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">Screenshots</h2>
+        <div class="screenshots-list">
+          <figure class="screenshot-figure">
+            <img
+              src="/assets/img/ijdrives-1.webp"
+              alt="IJDrives home page in dark mode with a route search form for land, sea, air and rail travel across Nigeria."
+              class="img-lazy"
+              loading="lazy"
+              width="1280"
+              height="800"
+            />
+            <figcaption>IJDrives home page in dark mode with a route search form for land, sea, air and rail travel across Nigeria.</figcaption>
+          </figure>
+          <figure class="screenshot-figure">
+            <img
+              src="/assets/img/ijdrives-2.webp"
+              alt="IJDrives in light mode showing four transport mode cards: land, sea, air and rail."
+              class="img-lazy"
+              loading="lazy"
+              width="1280"
+              height="800"
+            />
+            <figcaption>IJDrives in light mode showing four transport mode cards: land, sea, air and rail.</figcaption>
+          </figure>
+          <figure class="screenshot-figure">
+            <img
+              src="/assets/img/ijdrives-3.webp"
+              alt="IJDrives rail results for Lagos to Ibadan with fare filters and train class options."
+              class="img-lazy"
+              loading="lazy"
+              width="1280"
+              height="800"
+            />
+            <figcaption>IJDrives rail results for Lagos to Ibadan with fare filters and train class options.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- What I would change -->
+      <section class="case-section reveal">
+        <h2 class="case-section__title">What I would change</h2>
+        <p class="case-section__text">Add a real backend service with a live operator API to fetch real-time bus and train seat availability rather than simulating schedule lookups.</p>
+      </section>
+
+      <!-- Project Navigation -->
+      <nav class="case-nav" aria-label="Project navigation">
+        <a href="/work/athenaeum" class="case-nav__link">
+          <span class="case-nav__label">&larr; Previous project</span>
+          <span class="case-nav__title">Athenaeum-Ikedi</span>
+        </a>
+        <a href="/work/stylishstrokes" class="case-nav__link" style="text-align: right;">
+          <span class="case-nav__label">Next project &rarr;</span>
+          <span class="case-nav__title">StylishStrokes</span>
+        </a>
+      </nav>
+    </article>
+
+    <!-- Closing Call To Action Band -->
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Have ideas for transport or marketplace apps?</h2>
+          <p class="cta-band__desc">I'm available to collaborate on full-stack architecture, clean client development, and product execution.</p>
+        </div>
+        <a href="/contact" class="btn btn--primary">Get in touch &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">&copy; 2025 Ogbonne Ikedinachi. All rights reserved.</p>
+      <div class="site-footer__links">
+        <a href="https://github.com/Ikedi-21" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ikedinachi-ogbonne-81129539b" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:ikedinachiogbonne@gmail.com" class="site-footer__link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Single shared script -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Selected Projects | Ogbonne Ikedinachi</title>
+  <meta name="description" content="Selected full-stack software engineering projects by Ogbonne Ikedinachi, including LUMEN, Athenaeum-Ikedi, IJ-Drives, and StylishStrokes." />
+  <link rel="canonical" href="https://ikedinachi.dev/work" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Work — Selected Projects | Ogbonne Ikedinachi" />
+  <meta property="og:description" content="Selected full-stack software engineering projects by Ogbonne Ikedinachi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ikedinachi.dev/work" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Work — Selected Projects | Ogbonne Ikedinachi" />
+  <meta name="twitter:description" content="Selected full-stack software engineering projects by Ogbonne Ikedinachi." />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+
+  <!-- Google Fonts: Newsreader & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" />
+
+  <!-- Single shared stylesheet -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <!-- Navigation progress bar -->
+  <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+
+  <!-- First-visit session loader -->
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <svg class="site-loader__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ogbonne Ikedinachi monogram">
+      <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+      <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+    </svg>
+    <span class="site-loader__name">Ogbonne Ikedinachi</span>
+  </div>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="Ogbonne Ikedinachi — Home">
+        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+        </svg>
+        <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-nav__links">
+          <a href="/" class="site-nav__link">Home</a>
+          <a href="/work" class="site-nav__link" aria-current="page">Work</a>
+          <a href="/stack" class="site-nav__link">Stack</a>
+          <a href="/how-i-work" class="site-nav__link">How I work</a>
+          <a href="/about" class="site-nav__link">About</a>
+          <a href="/contact" class="site-nav__link">Contact</a>
+        </div>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary btn--small" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="mobile-nav__header">
+      <span class="site-logo">
+        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
+        </svg>
+        <span class="site-logo__wordmark">Ogbonne Ikedinachi</span>
+      </span>
+      <button type="button" class="mobile-nav__close" id="mobile-menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__items">
+      <a href="/" class="mobile-nav__link">Home</a>
+      <a href="/work" class="mobile-nav__link" aria-current="page">Work</a>
+      <a href="/stack" class="mobile-nav__link">Stack</a>
+      <a href="/how-i-work" class="mobile-nav__link">How I work</a>
+      <a href="/about" class="mobile-nav__link">About</a>
+      <a href="/contact" class="mobile-nav__link">Contact</a>
+      <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary" style="margin-top: var(--space-md);" target="_blank" rel="noopener noreferrer">Download CV</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <span class="page-header__label">Portfolio</span>
+        <h1 class="page-header__title">Selected Projects</h1>
+        <p class="page-header__intro">A showcase of full-stack web applications spanning discovery platforms, library architectures, transit marketplaces, and creative stroke engines.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="projects-grid">
+          <!-- 1. LUMEN -->
+          <article class="project-card reveal">
+            <a href="/work/lumen" class="project-card__image-link" aria-label="View LUMEN case study">
+              <img
+                src="/assets/img/lumen-2.webp"
+                alt="LUMEN home page hero carousel featuring a film, with category tabs for movies, books, manga and comics."
+                class="project-card__image img-lazy"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </a>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__name">LUMEN</h3>
+                <span class="badge badge--published">Published</span>
+              </div>
+              <p class="project-card__desc">Discovery platform for movies, books, manga and comics. Features role-based access, cart, coin wallet, payouts, and Paystack top-up verified server-side.</p>
+              <div class="project-card__tags">
+                <span class="tag">React 19</span>
+                <span class="tag">Vite</span>
+                <span class="tag">React Router</span>
+                <span class="tag">Supabase</span>
+                <span class="tag">Paystack</span>
+                <span class="tag">Vercel Serverless</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/work/lumen" class="btn btn--small btn--primary">Case study</a>
+                <a href="https://lumen1-mu.vercel.app/" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">Live site</a>
+                <a href="https://github.com/Ikedi-21/LUMEN" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Athenaeum-Ikedi -->
+          <article class="project-card reveal">
+            <a href="/work/athenaeum" class="project-card__image-link" aria-label="View Athenaeum-Ikedi case study">
+              <img
+                src="/assets/img/athenaeum-1.webp"
+                alt="Athenaeum Ikedi home page headed 'Manage Your Reading, Simplified' with catalogue search and a library photograph."
+                class="project-card__image img-lazy"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </a>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__name">Athenaeum-Ikedi</h3>
+                <span class="badge badge--published">Published</span>
+              </div>
+              <p class="project-card__desc">Academic library management system built with Python and Django. Features catalogue management, borrowing and returns, holds queue, fines, audit log, and strict CSP.</p>
+              <div class="project-card__tags">
+                <span class="tag">Python</span>
+                <span class="tag">Django 6.1</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Railway</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/work/athenaeum" class="btn btn--small btn--primary">Case study</a>
+                <a href="https://athenaeum-ikedi-production.up.railway.app/" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">Live site</a>
+                <a href="https://github.com/Ikedi-21/Athenaeum-Ikedi" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. IJ-Drives -->
+          <article class="project-card reveal">
+            <a href="/work/ij-drives" class="project-card__image-link" aria-label="View IJ-Drives case study">
+              <img
+                src="/assets/img/ijdrives-1.webp"
+                alt="IJDrives home page in dark mode with a route search form for land, sea, air and rail travel across Nigeria."
+                class="project-card__image img-lazy"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </a>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__name">IJ-Drives</h3>
+                <span class="badge badge--unpublished">Unpublished</span>
+              </div>
+              <p class="project-card__desc">Multi-modal Nigerian transport marketplace covering land, sea, air and rail travel. Designed with dark/light mode interfaces, Google Maps integration, and offline persistence.</p>
+              <div class="project-card__tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Google Maps</span>
+                <span class="tag">IndexedDB</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/work/ij-drives" class="btn btn--small btn--primary">Case study</a>
+                <a href="https://github.com/Ikedi-21/IJ-Drives" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. StylishStrokes -->
+          <article class="project-card reveal">
+            <a href="/work/stylishstrokes" class="project-card__image-link" aria-label="View StylishStrokes case study">
+              <img
+                src="/assets/img/stylishstrokes-1.webp"
+                alt="StylishStrokes hero reading 'Mastering the Elegant Cadence of Calligraphy' on a black background."
+                class="project-card__image img-lazy"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </a>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__name">StylishStrokes</h3>
+                <span class="badge badge--unpublished">Unpublished</span>
+              </div>
+              <p class="project-card__desc">Single-page calligraphy archive with an interactive stroke engine and live tracing tool. Team project of five; Lead UI Designer.</p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Vite</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Canvas</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="/work/stylishstrokes" class="btn btn--small btn--primary">Case study</a>
+                <a href="https://github.com/Ikedi-21/Styleish-strokes" class="btn btn--small btn--secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Call To Action Band -->
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Interested in building together?</h2>
+          <p class="cta-band__desc">Let's connect to discuss software engineering, technical delivery, or project collaboration.</p>
+        </div>
+        <a href="/contact" class="btn btn--primary">Get in touch &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">&copy; 2025 Ogbonne Ikedinachi. All rights reserved.</p>
+      <div class="site-footer__links">
+        <a href="https://github.com/Ikedi-21" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ikedinachi-ogbonne-81129539b" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:ikedinachiogbonne@gmail.com" class="site-footer__link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Single shared script -->
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
