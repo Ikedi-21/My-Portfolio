@@ -1,281 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stack | Technologies &amp; Tools | Ikedinachi Ogbonne</title>
-  <meta name="description" content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne." />
-  <link rel="canonical" href="https://ikedinachi.dev/stack" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack | Technologies &amp; Tools | Ikedinachi Ogbonne</title>
+    <meta
+      name="description"
+      content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne."
+    />
+    <link rel="canonical" href="https://ikedinachi.dev/stack" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Stack | Technologies &amp; Tools | Ikedinachi Ogbonne" />
-  <meta property="og:description" content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ikedinachi.dev/stack" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Stack | Technologies &amp; Tools | Ikedinachi Ogbonne"
+    />
+    <meta
+      property="og:description"
+      content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ikedinachi.dev/stack" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stack | Technologies &amp; Tools | Ikedinachi Ogbonne" />
-  <meta name="twitter:description" content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Stack | Technologies &amp; Tools | Ikedinachi Ogbonne"
+    />
+    <meta
+      name="twitter:description"
+      content="Technical stack, languages, frameworks, and tooling utilised by software developer Ikedinachi Ogbonne."
+    />
 
-  <!-- Favicons -->
-  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="/assets/brand/favicon-32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
 
-  <!-- Google Fonts: Newsreader & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" />
+    <!-- Google Fonts: Newsreader & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap"
+    />
 
-  <!-- Single shared stylesheet -->
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-</head>
-<body>
-  <!-- Navigation progress bar -->
-  <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+    <!-- Single shared stylesheet -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation progress bar -->
+    <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
 
-  <!-- First-visit session loader -->
-  <div class="site-loader" id="site-loader" aria-hidden="true">
-    <svg class="site-loader__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ikedinachi Ogbonne monogram">
-      <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
-      <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
-    </svg>
-    <span class="site-loader__name">Ikedinachi Ogbonne</span>
-  </div>
+    <!-- First-visit session loader -->
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <svg
+        class="site-loader__mark"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 64 64"
+        role="img"
+        aria-label="Ikedinachi Ogbonne monogram"
+      >
+        <circle
+          cx="25"
+          cy="32"
+          r="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="6"
+        />
+        <rect x="50" y="12" width="6" height="40" fill="currentColor" />
+      </svg>
+      <span class="site-loader__name">Ikedinachi Ogbonne</span>
+    </div>
 
-  <!-- Skip link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="/" class="site-logo" aria-label="Ikedinachi Ogbonne, Home">
-        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
-          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
-          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
-        </svg>
-        <span class="site-logo__wordmark">
-          <span class="site-logo__name--full">Ikedinachi Ogbonne</span>
-          <span class="site-logo__name--short" aria-hidden="true">IO</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary navigation">
-        <div class="site-nav__links">
-          <a href="/" class="site-nav__link">Home</a>
-          <a href="/work" class="site-nav__link">Work</a>
-          <a href="/stack" class="site-nav__link" aria-current="page">Stack</a>
-          <a href="/how-i-work" class="site-nav__link">How I work</a>
-          <a href="/about" class="site-nav__link">About</a>
-          <a href="/contact" class="site-nav__link">Contact</a>
-        </div>
-      </nav>
-
-      <div class="site-header__actions">
-        <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary btn--small" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download CV
+    <!-- Header & Navigation -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="/" class="site-logo" aria-label="Ikedinachi Ogbonne, Home">
+          <svg
+            class="logo-mark"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            role="img"
+            aria-hidden="true"
+          >
+            <circle
+              cx="25"
+              cy="32"
+              r="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="6"
+            />
+            <rect x="50" y="12" width="6" height="40" fill="currentColor" />
+          </svg>
+          <span class="site-logo__wordmark">
+            <span class="site-logo__name--full">Ikedinachi Ogbonne</span>
+            <span class="site-logo__name--short" aria-hidden="true">IO</span>
+          </span>
         </a>
 
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
-          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <div class="site-nav__links">
+            <a href="/" class="site-nav__link">Home</a>
+            <a href="/work" class="site-nav__link">Work</a>
+            <a href="/stack" class="site-nav__link" aria-current="page"
+              >Stack</a
+            >
+            <a href="/how-i-work" class="site-nav__link">How I work</a>
+            <a href="/about" class="site-nav__link">About</a>
+            <a href="/contact" class="site-nav__link">Contact</a>
+          </div>
+        </nav>
 
-        <button type="button" class="mobile-menu-toggle" id="mobile-menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+        <div class="site-header__actions">
+          <a
+            href="/assets/Ogbonne-Ikedinachi-CV.pdf"
+            class="btn btn--primary btn--small"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch to dark theme"
+          >
+            <svg
+              class="theme-toggle__moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="theme-toggle__sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            id="mobile-menu-open"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Mobile nav overlay -->
-  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
-    <div class="mobile-nav__header">
-      <span class="site-logo">
-        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
-          <circle cx="25" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
-          <rect x="50" y="12" width="6" height="40" fill="currentColor"/>
-        </svg>
-        <span class="site-logo__wordmark">
-          <span class="site-logo__name--full">Ikedinachi Ogbonne</span>
-          <span class="site-logo__name--short" aria-hidden="true">IO</span>
+    <!-- Mobile nav overlay -->
+    <div
+      class="mobile-nav"
+      id="mobile-nav"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Navigation menu"
+    >
+      <div class="mobile-nav__header">
+        <span class="site-logo">
+          <svg
+            class="logo-mark"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            role="img"
+            aria-hidden="true"
+          >
+            <circle
+              cx="25"
+              cy="32"
+              r="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="6"
+            />
+            <rect x="50" y="12" width="6" height="40" fill="currentColor" />
+          </svg>
+          <span class="site-logo__wordmark">
+            <span class="site-logo__name--full">Ikedinachi Ogbonne</span>
+            <span class="site-logo__name--short" aria-hidden="true">IO</span>
+          </span>
         </span>
-      </span>
-      <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="mobile-nav__items">
-      <a href="/" class="mobile-nav__link">Home</a>
-      <a href="/work" class="mobile-nav__link">Work</a>
-      <a href="/stack" class="mobile-nav__link" aria-current="page">Stack</a>
-      <a href="/how-i-work" class="mobile-nav__link">How I work</a>
-      <a href="/about" class="mobile-nav__link">About</a>
-      <a href="/contact" class="mobile-nav__link">Contact</a>
-      <a href="/assets/Ogbonne-Ikedinachi-CV.pdf" class="btn btn--primary" style="margin-top: var(--space-md);" target="_blank" rel="noopener noreferrer">Download CV</a>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main id="main-content">
-    <div class="page-header">
-      <div class="container">
-        <span class="page-header__label">Engineering Toolkit</span>
-        <h1 class="page-header__title">Technologies &amp; Tools</h1>
-        <p class="page-header__intro">Grouped by how often I use them. No arbitrary percentage bars, just tools I rely on to build working software.</p>
+        <button
+          type="button"
+          class="mobile-menu-close"
+          id="mobile-menu-close"
+          aria-label="Close menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav__items">
+        <a href="/" class="mobile-nav__link">Home</a>
+        <a href="/work" class="mobile-nav__link">Work</a>
+        <a href="/stack" class="mobile-nav__link" aria-current="page">Stack</a>
+        <a href="/how-i-work" class="mobile-nav__link">How I work</a>
+        <a href="/about" class="mobile-nav__link">About</a>
+        <a href="/contact" class="mobile-nav__link">Contact</a>
+        <a
+          href="/assets/Ogbonne-Ikedinachi-CV.pdf"
+          class="btn btn--primary"
+          style="margin-top: var(--space-md)"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Download CV</a
+        >
       </div>
     </div>
 
-    <section class="section">
-      <div class="container">
-        <div class="stack-tiers">
-
-          <!-- Tier 1: Used in my projects -->
-          <article class="stack-tier reveal">
-            <header class="stack-tier__header">
-              <span class="badge badge--published" style="margin-bottom: var(--space-xs);">Primary Production Stack</span>
-              <h2 class="stack-tier__title">Used in my projects</h2>
-              <p class="stack-tier__desc">Languages, frameworks, and infrastructure I use regularly to build and ship web applications.</p>
-            </header>
-
-            <div class="stack-tier__groups">
-              <div class="stack-group">
-                <h3 class="stack-group__name">Languages</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">TypeScript</span>
-                  <span class="tag">HTML/CSS</span>
-                  <span class="tag">SQL</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Frameworks &amp; Libraries</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Django</span>
-                  <span class="tag">FastAPI</span>
-                  <span class="tag">React</span>
-                  <span class="tag">Tailwind CSS</span>
-                  <span class="tag">Vite</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Databases &amp; APIs</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">PostgreSQL</span>
-                  <span class="tag">Supabase</span>
-                  <span class="tag">REST APIs</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Tools &amp; Infrastructure</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Git</span>
-                  <span class="tag">GitHub</span>
-                  <span class="tag">Vercel</span>
-                  <span class="tag">Railway</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Tier 2: Working knowledge -->
-          <article class="stack-tier reveal">
-            <header class="stack-tier__header">
-              <span class="badge badge--unpublished" style="margin-bottom: var(--space-xs);">Secondary Competencies</span>
-              <h2 class="stack-tier__title">Working knowledge</h2>
-              <p class="stack-tier__desc">Technologies and tools I have used across coursework, side projects, and team workflows.</p>
-            </header>
-
-            <div class="stack-tier__groups">
-              <div class="stack-group">
-                <h3 class="stack-group__name">Languages &amp; Desktop</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Java</span>
-                  <span class="tag">C#</span>
-                  <span class="tag">JavaFX</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Systems &amp; Architecture</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Redis</span>
-                  <span class="tag">WebSockets</span>
-                  <span class="tag">django-tenants</span>
-                  <span class="tag">Docker</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Project Delivery</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Notion</span>
-                  <span class="tag">Scrum</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Tier 3: Learning -->
-          <article class="stack-tier reveal">
-            <header class="stack-tier__header">
-              <span class="badge badge--unpublished" style="margin-bottom: var(--space-xs);">Active Exploration</span>
-              <h2 class="stack-tier__title">Currently learning</h2>
-              <p class="stack-tier__desc">Technologies I am actively exploring and building practice projects with.</p>
-            </header>
-
-            <div class="stack-tier__groups">
-              <div class="stack-group">
-                <h3 class="stack-group__name">Mobile &amp; Cross-Platform</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Dart and Flutter</span>
-                </div>
-              </div>
-
-              <div class="stack-group">
-                <h3 class="stack-group__name">Enterprise Backend</h3>
-                <div class="stack-group__tags">
-                  <span class="tag">Spring Boot</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
+    <!-- Main Content -->
+    <main id="main-content">
+      <div class="page-header">
+        <div class="container">
+          <span class="page-header__label">Engineering Toolkit</span>
+          <h1 class="page-header__title">Technologies &amp; Tools</h1>
+          <p class="page-header__intro">
+            Grouped by how often I use them. No arbitrary percentage bars, just
+            tools I rely on to build working software.
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- Closing Call To Action Band -->
-    <section class="cta-band">
-      <div class="container cta-band__inner">
-        <div>
-          <h2 class="cta-band__title">See these technologies in action</h2>
-          <p class="cta-band__desc">Explore the case studies to review how these languages and frameworks were applied to solve concrete user problems.</p>
+      <section class="section">
+        <div class="container">
+          <div class="stack-tiers">
+            <!-- Tier 1: Used in my projects -->
+            <article class="stack-tier reveal">
+              <header class="stack-tier__header">
+                <span
+                  class="badge badge--published"
+                  style="margin-bottom: var(--space-xs)"
+                  >Primary Production Stack</span
+                >
+                <h2 class="stack-tier__title">Used in my projects</h2>
+                <p class="stack-tier__desc">
+                  Languages, frameworks, and infrastructure I use regularly to
+                  build and ship web applications.
+                </p>
+              </header>
+
+              <div class="stack-tier__groups">
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Languages</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">SQL</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Frameworks &amp; Libraries</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Django</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Vite</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Databases &amp; APIs</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">REST APIs</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Tools &amp; Infrastructure</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Vercel</span>
+                    <span class="tag">Railway</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tier 2: Working knowledge -->
+            <article class="stack-tier reveal">
+              <header class="stack-tier__header">
+                <span
+                  class="badge badge--unpublished"
+                  style="margin-bottom: var(--space-xs)"
+                  >Secondary Competencies</span
+                >
+                <h2 class="stack-tier__title">Working knowledge</h2>
+                <p class="stack-tier__desc">
+                  Technologies and tools I have used across coursework, side
+                  projects, and team workflows.
+                </p>
+              </header>
+
+              <div class="stack-tier__groups">
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Languages &amp; Desktop</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">JavaFX</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Systems &amp; Architecture</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Redis</span>
+                    <span class="tag">WebSockets</span>
+                    <span class="tag">django-tenants</span>
+                    <span class="tag">Docker</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Project Delivery</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Notion</span>
+                    <span class="tag">Scrum</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tier 3: Learning -->
+            <article class="stack-tier reveal">
+              <header class="stack-tier__header">
+                <span
+                  class="badge badge--unpublished"
+                  style="margin-bottom: var(--space-xs)"
+                  >Active Exploration</span
+                >
+                <h2 class="stack-tier__title">Currently learning</h2>
+                <p class="stack-tier__desc">
+                  Technologies I am actively exploring and building practice
+                  projects with.
+                </p>
+              </header>
+
+              <div class="stack-tier__groups">
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Mobile &amp; Cross-Platform</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Dart and Flutter</span>
+                  </div>
+                </div>
+
+                <div class="stack-group">
+                  <h3 class="stack-group__name">Enterprise Backend</h3>
+                  <div class="stack-group__tags">
+                    <span class="tag">Spring Boot</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-        <a href="/work" class="btn btn--primary">View projects &rarr;</a>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <p class="site-footer__copyright">&copy; 2026 Ikedinachi Ogbonne. All rights reserved.</p>
-      <div class="site-footer__links">
-        <a href="https://github.com/Ikedi-21" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/ikedinachi-ogbonne-81129539b" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:ikedinachiogbonne@gmail.com" class="site-footer__link">Email</a>
-      </div>
-    </div>
-  </footer>
+      <!-- Closing Call To Action Band -->
+      <section class="cta-band">
+        <div class="container cta-band__inner">
+          <div>
+            <h2 class="cta-band__title">See these technologies in action</h2>
+            <p class="cta-band__desc">
+              Explore the case studies to review how these languages and
+              frameworks were applied to solve concrete user problems.
+            </p>
+          </div>
+          <a href="/work" class="btn btn--primary">View projects &rarr;</a>
+        </div>
+      </section>
+    </main>
 
-  <!-- Single shared script -->
-  <script src="/assets/js/main.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__copyright">
+          &copy; 2026 Ikedinachi Ogbonne. All rights reserved.
+        </p>
+        <div class="site-footer__links">
+          <a
+            href="https://github.com/Ikedi-21"
+            class="site-footer__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/ikedinachi-ogbonne-81129539b"
+            class="site-footer__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a href="mailto:ikedinachiogbonne@gmail.com" class="site-footer__link"
+            >Email</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Single shared script -->
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

@@ -300,6 +300,7 @@ noscript .site-loader {
 }
 
 .site-logo .logo-mark {
+  display: none;
   width: 26px;
   height: 26px;
   color: var(--accent);
@@ -317,16 +318,36 @@ noscript .site-loader {
 }
 
 .site-logo__name--short {
-  display: inline;
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 @media (min-width: 48rem) {
+  .site-logo .logo-mark {
+    display: block;
+  }
   .site-logo__name--full {
     display: inline;
   }
   .site-logo__name--short {
     display: none;
   }
+}
+
+.mobile-nav__header .site-logo .logo-mark {
+  display: block;
+}
+
+.mobile-nav__header .site-logo__name--full {
+  display: inline;
+}
+
+.mobile-nav__header .site-logo__name--short {
+  display: none;
 }
 
 .site-nav__links {
@@ -375,6 +396,7 @@ noscript .site-loader {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  flex-shrink: 0;
 }
 
 /* Theme Toggle Button */
