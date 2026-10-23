@@ -56,7 +56,7 @@
 
   /* ==========================================================
      2. THEME TOGGLE
-     Supports system preference + localStorage override in try/catch.
+     Dark is the default; remembers the visitor's theme choice.
      ========================================================== */
   function initTheme() {
     const toggle = document.getElementById('theme-toggle');
@@ -71,16 +71,16 @@
 
     if (!toggle) return;
 
+    const initialTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+    toggle.setAttribute(
+      'aria-label',
+      initialTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+    );
+
     toggle.addEventListener('click', function () {
       const currentTheme = document.documentElement.getAttribute('data-theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      let nextTheme;
-      if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
-        nextTheme = 'light';
-      } else {
-        nextTheme = 'dark';
-      }
+      const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
 
       document.documentElement.setAttribute('data-theme', nextTheme);
       toggle.setAttribute(
@@ -242,6 +242,10 @@
      7. SCROLL REVEAL OBSERVER
      ========================================================== */
   function initScrollReveal() {
+    document.querySelectorAll('.projects-grid > .project-card, .experience-list > .experience-card, .stack-tier, .case-section').forEach(function (el) {
+      el.classList.add('reveal');
+    });
+
     const reveals = document.querySelectorAll('.reveal');
     if (!reveals.length) return;
 
@@ -273,6 +277,35 @@
   }
 
   /* ==========================================================
+     STACK TECHNOLOGY MARKS
+     Small, text-based marks keep the toolkit visual without
+     adding a third-party icon request or extra image payloads.
+     ========================================================== */
+  function initStackIcons() {
+    const marks = {
+      Python: 'Py', JavaScript: 'JS', TypeScript: 'TS', 'HTML/CSS': '</>', SQL: 'SQL',
+      Django: 'Dj', FastAPI: 'FA', React: 'Re', 'Tailwind CSS': 'Tw', Vite: 'Vi',
+      PostgreSQL: 'Pg', MySQL: 'My', SQLite: 'Sq', Supabase: 'Sb', 'REST APIs': 'API',
+      Git: 'Git', GitHub: 'GH', Vercel: 'Ve', Railway: 'Rw', Java: 'Ja', 'C#': 'C#',
+      JavaFX: 'JFX', Redis: 'Rd', WebSockets: 'WS', 'django-tenants': 'Dt', Docker: 'Dk',
+      Notion: 'No', Scrum: 'Sc', 'Dart and Flutter': 'Df', 'Spring Boot': 'Sp',
+    };
+
+    document.querySelectorAll('.stack-group__tags .tag').forEach(function (tag) {
+      const name = tag.textContent.trim();
+      const mark = marks[name];
+      if (!mark || tag.querySelector('.stack-tech-tag__mark')) return;
+
+      tag.classList.add('stack-tech-tag');
+      const icon = document.createElement('span');
+      icon.className = 'stack-tech-tag__mark';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = mark;
+      tag.prepend(icon);
+    });
+  }
+
+  /* ==========================================================
      8. FORMSPREE CONTACT FORM HANDLER
      Handles client-side validation, Formspree submission, loading,
      success, and error states gracefully.
@@ -280,6 +313,11 @@
   function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
+
+    const configuredAction = form.getAttribute('action') || '';
+    const formNotice = document.getElementById('contact-form-notice');
+    const isConfigured = configuredAction && !configuredAction.includes('YOUR_FORM_ID');
+    if (formNotice && isConfigured) formNotice.hidden = true;
 
     const statusSuccess = document.getElementById('form-status-success');
     const statusError = document.getElementById('form-status-error');
@@ -376,7 +414,7 @@
       if (!formAction || formAction.includes('YOUR_FORM_ID')) {
         if (statusError) {
           if (statusErrorMessage) {
-            statusErrorMessage.textContent = 'Please configure your Formspree endpoint (Form ID) in contact.html before submitting.';
+            statusErrorMessage.textContent = 'This message form is not connected yet. Please email ikedinachiogbonne@gmail.com directly.';
           }
           statusError.classList.add('is-visible');
           statusError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -440,12 +478,14 @@
      DOM INITIALISATION
      ========================================================== */
   document.addEventListener('DOMContentLoaded', function () {
+    document.documentElement.classList.add('has-js');
     initSessionLoader();
     initTheme();
     initMobileMenu();
     initNavProgressBar();
     initLocalUrlFallback();
     initLazyImages();
+    initStackIcons();
     initScrollReveal();
     initContactForm();
   });
