@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IJ-Drives | Case Study | Ikedinachi Ogbonne</title>
-  <meta name="description" content="Case study for IJ-Drives, a multi-modal Nigerian transport marketplace covering land, sea, air and rail travel. Built with vanilla JavaScript, HTML/CSS, Google Maps, and IndexedDB." />
+  <meta name="description" content="Case study for IJ-Drives, a multi-modal Nigerian transport marketplace covering land, rail, sea, and air travel. Built with FastAPI, PostgreSQL, SQLAlchemy 2.0, Docker, and Leaflet." />
   <link rel="canonical" href="https://ikedinachi.dev/work/ij-drives" />
 
   <!-- Open Graph -->
@@ -128,10 +128,12 @@
         <p class="page-header__intro">Multi-modal Nigerian transport marketplace covering land, sea, air and rail.</p>
         <div class="case-hero__meta">
           <span class="badge badge--unpublished">Unpublished</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">Google Maps</span>
-          <span class="tag">IndexedDB</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQLAlchemy 2.0 (Async)</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Leaflet</span>
         </div>
         <div class="case-hero__actions">
           <a href="https://github.com/Ikedi-21/IJ-Drives" class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer">GitHub repository &rarr;</a>
@@ -141,13 +143,13 @@
       <!-- Overview -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Overview</h2>
-        <p class="case-section__text">IJ-Drives is a multi-modal Nigerian transport concept that brings interstate road travel, domestic ferry routes, flights, and passenger rail under one clear interface.</p>
+        <p class="case-section__text">IJ-Drives is a multi-modal transport marketplace demo for Nigeria. Users search routes across land, rail, sea, and air, pay from a digital wallet, and book tickets through an interactive 4-step flow.</p>
       </section>
 
       <!-- My Role -->
       <section class="case-section reveal">
         <h2 class="case-section__title">My role</h2>
-        <p class="case-section__text">Frontend developer. Created the UI flows, dual light and dark themes, multi-modal transport tabs, search forms, and offline client caching.</p>
+        <p class="case-section__text">Full-stack developer. Built the async FastAPI backend, database models, transaction locks, and authentication, alongside the responsive multi-modal frontend and route maps.</p>
       </section>
 
       <!-- The Problem -->
@@ -161,16 +163,20 @@
         <h2 class="case-section__title">Key decisions and rationale</h2>
         <div class="decision-list">
           <div class="decision-item">
-            <h3 class="decision-item__title">Vanilla JavaScript zero-dependency architecture</h3>
-            <p class="decision-item__desc">Built the client interface entirely with vanilla JavaScript and clean CSS. This keeps initial page weight low, which matters on variable 3G and 4G mobile connections.</p>
+            <h3 class="decision-item__title">Async FastAPI backend with a layered architecture</h3>
+            <p class="decision-item__desc">Structured the backend across routers, domain services, SQL repositories, and Pydantic schemas for clear separation of concerns and robust type contracts.</p>
           </div>
           <div class="decision-item">
-            <h3 class="decision-item__title">Client-side IndexedDB caching</h3>
-            <p class="decision-item__desc">Used IndexedDB to save recent route searches and terminal locations locally. Users can still view their search history and terminal notes if their phone signal drops in transit.</p>
+            <h3 class="decision-item__title">Row-level locking for double-spend prevention</h3>
+            <p class="decision-item__desc">Protected wallet debits and ticket bookings with row-level locking (<code>SELECT ... FOR UPDATE</code>) so concurrent requests cannot double-spend funds or overbook seats.</p>
           </div>
           <div class="decision-item">
-            <h3 class="decision-item__title">Native light and dark mode UI</h3>
-            <p class="decision-item__desc">Built light and dark themes using CSS variables with automatic system preference detection, making the interface comfortable to read both in direct sunlight and at night.</p>
+            <h3 class="decision-item__title">JWT authentication with bcrypt password hashing</h3>
+            <p class="decision-item__desc">Secured user accounts and session authorization with signed JSON Web Tokens and salted bcrypt password hashing.</p>
+          </div>
+          <div class="decision-item">
+            <h3 class="decision-item__title">Async pytest suite with atomic rollback validation</h3>
+            <p class="decision-item__desc">Built an automated async pytest suite covering authentication flows, wallet limit constraints, and atomic booking transactions with rollback verification.</p>
           </div>
         </div>
       </section>
@@ -178,18 +184,26 @@
       <!-- Architecture -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Architecture</h2>
-        <p class="case-section__text">Modular vanilla JavaScript components paired with CSS custom properties. Google Maps JavaScript API handles geographic waypoint selection, route distance calculations, and terminal locations, backed by browser IndexedDB storage for offline search caching.</p>
+        <p class="case-section__text">Built with an asynchronous FastAPI backend and a vanilla JavaScript frontend. PostgreSQL handles data persistence via SQLAlchemy 2.0 with aiosqlite for tests, Leaflet with Stadia Maps visualises transport routes, and Docker Compose manages local multi-container services.</p>
       </section>
 
       <!-- Stack -->
       <section class="case-section reveal">
         <h2 class="case-section__title">Technologies used</h2>
         <div class="project-card__tags">
-          <span class="tag">Vanilla JavaScript</span>
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3 Custom Properties</span>
-          <span class="tag">Google Maps API</span>
-          <span class="tag">IndexedDB</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQLAlchemy 2.0 (Async)</span>
+          <span class="tag">Pydantic v2</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQLite (aiosqlite)</span>
+          <span class="tag">JWT auth</span>
+          <span class="tag">bcrypt</span>
+          <span class="tag">Docker</span>
+          <span class="tag">pytest</span>
+          <span class="tag">Leaflet</span>
+          <span class="tag">Stadia Maps</span>
+          <span class="tag">Vanilla JS/HTML/CSS</span>
         </div>
       </section>
 
@@ -236,7 +250,7 @@
       <!-- What I would change -->
       <section class="case-section reveal">
         <h2 class="case-section__title">What I would change</h2>
-        <p class="case-section__text">Add a real backend service with a live operator API to fetch real-time bus and train seat availability rather than simulating schedule lookups.</p>
+        <p class="case-section__text">Integrate live partner operator APIs to stream real-time seat availability and status updates alongside simulated schedule data.</p>
       </section>
 
       <!-- Project Navigation -->
